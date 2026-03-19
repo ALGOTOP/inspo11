@@ -39,19 +39,128 @@
 <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 
 <style>
-/* ── The Artisan: Amber palette override ── */
+/* ── Emerald Obsidian palette override ── */
 :root, [data-theme], [data-wf-page] {
-  --_color---primary--violet-50:  #fffbeb;
-  --_color---primary--violet-100: #fef3c7;
-  --_color---primary--violet-200: #fde68a;
-  --_color---primary--violet-300: #fcd34d;
-  --_color---primary--violet-400: #fbbf24;
-  --_color---primary--violet-500: #F59E0B;
-  --_color---primary--violet-600: #d97706;
-  --_color---primary--violet-700: #b45309;
-  --_color---primary--violet-800: #92400e;
-  --_color---primary--violet-900: #78350f;
-  --_color---miscellaneous--midnight\<deleted\|variable-6f9a0a9f-3efe-e3f5-3eef-13ca3c55b685\>: #111111;
+  /* Primary accent scale (replaces violet) */
+  --_color---primary--violet-50:  #e6f5f1;
+  --_color---primary--violet-100: #ccebe3;
+  --_color---primary--violet-200: #99d7c7;
+  --_color---primary--violet-300: #66c3ab;
+  --_color---primary--violet-400: #33af8f;
+  --_color---primary--violet-500: #008767;
+  --_color---primary--violet-600: #045B4B;
+  --_color---primary--violet-700: #064E3B;
+  --_color---primary--violet-800: #03352A;
+  --_color---primary--violet-900: #021C17;
+
+  /* Background layers */
+  --_color---miscellaneous--midnight\<deleted\|variable-6f9a0a9f-3efe-e3f5-3eef-13ca3c55b685\>: #070A0B;
+
+  /* Expose semantic tokens for overrides below */
+  --eo-bg-primary:    #070A0B;
+  --eo-bg-secondary:  #091113;
+  --eo-surface:       #101719;
+  --eo-border:        #1E292B;
+  --eo-accent:        #008767;
+  --eo-cta:           #045B4B;
+  --eo-cta-hover:     #064E3B;
+  --eo-text-heading:  #FFFFFF;
+  --eo-text-body:     #E2E8F0;
+  --eo-text-muted:    #808E8B;
+  --eo-glow:          rgba(0, 135, 103, 0.15);
+}
+
+/* ── Global backgrounds ── */
+body,
+.page-wrapper {
+  background-color: var(--eo-bg-primary) !important;
+  color: var(--eo-text-body) !important;
+}
+
+/* Section-level surfaces */
+section,
+.section_home_header,
+.section_logo,
+.section_home_features,
+.section_home_usecases,
+.section_home_integrations,
+.section_layout397,
+[data-theme="dark"] {
+  background-color: var(--eo-bg-secondary) !important;
+}
+
+[data-theme="light"] {
+  background-color: var(--eo-bg-primary) !important;
+}
+
+/* Card & panel surfaces */
+.card,
+[class*="_card"],
+[class*="card_"],
+[class*="_item"],
+[class*="feature_"],
+[class*="pricing_"],
+[class*="testimonial_"] {
+  background-color: var(--eo-surface) !important;
+  border: 0.5px solid var(--eo-border) !important;
+}
+
+/* Glow behind primary UI cards */
+[class*="_card"]:before,
+[class*="feature_item"]:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, var(--eo-glow), transparent 70%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6,
+.heading-style-h1,
+.heading-style-h2,
+.heading-style-h3,
+.heading-style-h4 {
+  color: var(--eo-text-heading) !important;
+}
+
+p, li, span:not([class*="accent"]):not([class*="color-accent"]) {
+  color: var(--eo-text-body);
+}
+
+/* Muted text — logos, footer links, helper text */
+.footer_link,
+.text-color-secondary,
+[class*="logo_"],
+[class*="partner_"],
+.text-size-small {
+  color: var(--eo-text-muted) !important;
+}
+
+/* ── Borders & dividers ── */
+.divider-horizontal,
+[class*="divider"] {
+  background-color: var(--eo-border) !important;
+  border-color: var(--eo-border) !important;
+}
+
+/* ── CTA / Buttons ── */
+.button[data-wf--button--variant="base"],
+.button:not([data-wf--button--variant="secondary"]) {
+  background-color: var(--eo-cta) !important;
+  color: #FFFFFF !important;
+  border-color: var(--eo-cta) !important;
+}
+.button[data-wf--button--variant="base"]:hover,
+.button:not([data-wf--button--variant="secondary"]):hover {
+  background-color: var(--eo-cta-hover) !important;
+  border-color: var(--eo-cta-hover) !important;
+}
+
+/* ── Section transition gradients (dark-green tones) ── */
+[class*="section_"]:not(:last-child) {
+  border-bottom: 1px solid var(--eo-border);
 }
 </style>
 
@@ -73,7 +182,7 @@ body {
 /* Focus state style for keyboard navigation for the focusable elements */
 *[tabindex]:focus-visible,
   input[type="file"]:focus-visible {
-   outline: 0.125rem solid #F59E0B;
+   outline: 0.125rem solid #008767;
    outline-offset: 0.125rem;
 }
 
@@ -348,17 +457,17 @@ window.addEventListener('scroll', function () {
 .rays {
     --stripes: repeating-linear-gradient(
         135deg,
-        rgba(245, 158, 11, 0) 0%,
-        rgba(245, 158, 11, 0.1) 5%,
-        rgba(245, 158, 11, 0) 10%,
-        rgba(245, 158, 11, 0.2) 15%,
-        rgba(245, 158, 11, 0.1) 20%,
-        rgba(245, 158, 11, 0.2) 25%,
-        rgba(245, 158, 11, 0) 30%,
-        rgba(245, 158, 11, 0.5) 35%,
-        rgba(245, 158, 11, 0) 40%,
-        rgba(245, 158, 11, 0.1) 45%,
-        rgba(245, 158, 11, 0) 50%
+        rgba(0, 135, 103, 0) 0%,
+        rgba(0, 135, 103, 0.1) 5%,
+        rgba(0, 135, 103, 0) 10%,
+        rgba(0, 135, 103, 0.2) 15%,
+        rgba(0, 135, 103, 0.1) 20%,
+        rgba(0, 135, 103, 0.2) 25%,
+        rgba(0, 135, 103, 0) 30%,
+        rgba(0, 135, 103, 0.5) 35%,
+        rgba(0, 135, 103, 0) 40%,
+        rgba(0, 135, 103, 0.1) 45%,
+        rgba(0, 135, 103, 0) 50%
     );
     background-image: var(--stripes);
     background-size: 300%, 200%;
