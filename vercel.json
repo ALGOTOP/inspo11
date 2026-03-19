@@ -1,8 +1,5 @@
 {
   "redirects": [
     { "source": "/axcera.io/index.html", "destination": "/", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/", "destination": "/axcera.io/index.html" }
   ]
 }
