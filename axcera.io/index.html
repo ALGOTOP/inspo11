@@ -70,97 +70,65 @@
   --eo-glow:          rgba(0, 135, 103, 0.15);
 }
 
-/* ── Global backgrounds ── */
+/* ── Global backgrounds (dark base only) ── */
 body,
 .page-wrapper {
   background-color: var(--eo-bg-primary) !important;
-  color: var(--eo-text-body) !important;
 }
 
-/* Section-level surfaces */
-section,
+/* Dark sections only — header + any data-theme="dark" */
 .section_home_header,
 .section_logo,
-.section_home_features,
-.section_home_usecases,
-.section_home_integrations,
-.section_layout397,
 [data-theme="dark"] {
   background-color: var(--eo-bg-secondary) !important;
 }
 
-[data-theme="light"] {
-  background-color: var(--eo-bg-primary) !important;
-}
-
-/* Card & panel surfaces */
-.card,
-[class*="_card"],
-[class*="card_"],
-[class*="_item"],
-[class*="feature_"],
-[class*="pricing_"],
-[class*="testimonial_"] {
-  background-color: var(--eo-surface) !important;
-  border: 0.5px solid var(--eo-border) !important;
-}
-
-/* Glow behind primary UI cards */
-[class*="_card"]:before,
-[class*="feature_item"]:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, var(--eo-glow), transparent 70%);
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-/* ── Typography ── */
-h1, h2, h3, h4, h5, h6,
-.heading-style-h1,
-.heading-style-h2,
-.heading-style-h3,
-.heading-style-h4 {
+/* ── Typography scoped to dark sections only ── */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+.section_home_header h1,
+.section_home_header h2 {
   color: var(--eo-text-heading) !important;
 }
 
-p, li, span:not([class*="accent"]):not([class*="color-accent"]) {
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+.section_home_header p,
+.section_home_header li {
   color: var(--eo-text-body);
 }
 
-/* Muted text — logos, footer links, helper text */
-.footer_link,
-.text-color-secondary,
-[class*="logo_"],
-[class*="partner_"],
-.text-size-small {
+/* Muted text — footer links and logo strip (dark sections only) */
+[data-theme="dark"] .footer_link,
+[data-theme="dark"] .text-color-secondary,
+[data-theme="dark"] [class*="logo_"],
+[data-theme="dark"] [class*="partner_"],
+[data-theme="dark"] .text-size-small {
   color: var(--eo-text-muted) !important;
 }
 
-/* ── Borders & dividers ── */
-.divider-horizontal,
-[class*="divider"] {
+/* ── Borders & dividers (dark sections only) ── */
+[data-theme="dark"] .divider-horizontal,
+[data-theme="dark"] [class*="divider"] {
   background-color: var(--eo-border) !important;
   border-color: var(--eo-border) !important;
 }
 
-/* ── CTA / Buttons ── */
-.button[data-wf--button--variant="base"],
-.button:not([data-wf--button--variant="secondary"]) {
+/* ── CTA Buttons scoped to dark sections ── */
+[data-theme="dark"] .button[data-wf--button--variant="base"],
+.section_home_header .button[data-wf--button--variant="base"] {
   background-color: var(--eo-cta) !important;
   color: #FFFFFF !important;
   border-color: var(--eo-cta) !important;
 }
-.button[data-wf--button--variant="base"]:hover,
-.button:not([data-wf--button--variant="secondary"]):hover {
+[data-theme="dark"] .button[data-wf--button--variant="base"]:hover,
+.section_home_header .button[data-wf--button--variant="base"]:hover {
   background-color: var(--eo-cta-hover) !important;
   border-color: var(--eo-cta-hover) !important;
-}
-
-/* ── Section transition gradients (dark-green tones) ── */
-[class*="section_"]:not(:last-child) {
-  border-bottom: 1px solid var(--eo-border);
 }
 </style>
 
