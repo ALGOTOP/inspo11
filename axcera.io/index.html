@@ -39,122 +39,6 @@
 <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 
 <style>
-/* ── Emerald Obsidian palette override ── */
-:root, [data-theme], [data-wf-page] {
-  /* Primary accent scale (replaces violet) */
-  --_color---primary--violet-50:  #e6f5f1;
-  --_color---primary--violet-100: #ccebe3;
-  --_color---primary--violet-200: #99d7c7;
-  --_color---primary--violet-300: #66c3ab;
-  --_color---primary--violet-400: #33af8f;
-  --_color---primary--violet-500: #008767;
-  --_color---primary--violet-600: #045B4B;
-  --_color---primary--violet-700: #064E3B;
-  --_color---primary--violet-800: #03352A;
-  --_color---primary--violet-900: #021C17;
-
-  /* Background layers */
-  --_color---miscellaneous--midnight\<deleted\|variable-6f9a0a9f-3efe-e3f5-3eef-13ca3c55b685\>: #070A0B;
-
-  /* Override Webflow semantic accent/overlay tokens directly */
-  --colors--accent-primary:   #008767;
-  --colors--accent-secondary: #33af8f;
-  --colors--overlay:          rgba(0, 135, 103, 0.10);
-
-  /* Expose semantic tokens for overrides below */
-  --eo-bg-primary:    #070A0B;
-  --eo-bg-secondary:  #091113;
-  --eo-surface:       #101719;
-  --eo-border:        #1E292B;
-  --eo-accent:        #008767;
-  --eo-cta:           #045B4B;
-  --eo-cta-hover:     #064E3B;
-  --eo-text-heading:  #FFFFFF;
-  --eo-text-body:     #E2E8F0;
-  --eo-text-muted:    #808E8B;
-  --eo-glow:          rgba(0, 135, 103, 0.15);
-}
-
-/* ── Global backgrounds (dark base only) ── */
-body,
-.page-wrapper {
-  background-color: var(--eo-bg-primary) !important;
-}
-
-/* Dark sections only — header + any data-theme="dark" */
-.section_home_header,
-.section_logo,
-[data-theme="dark"] {
-  background-color: var(--eo-bg-secondary) !important;
-}
-
-/* ── Typography scoped to dark sections only ── */
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4,
-[data-theme="dark"] h5,
-[data-theme="dark"] h6,
-.section_home_header h1,
-.section_home_header h2 {
-  color: var(--eo-text-heading) !important;
-}
-
-[data-theme="dark"] p,
-[data-theme="dark"] li,
-.section_home_header p,
-.section_home_header li {
-  color: var(--eo-text-body);
-}
-
-/* Muted text — footer links and logo strip (dark sections only) */
-[data-theme="dark"] .footer_link,
-[data-theme="dark"] .text-color-secondary,
-[data-theme="dark"] [class*="logo_"],
-[data-theme="dark"] [class*="partner_"],
-[data-theme="dark"] .text-size-small {
-  color: var(--eo-text-muted) !important;
-}
-
-/* ── Borders & dividers (dark sections only) ── */
-[data-theme="dark"] .divider-horizontal,
-[data-theme="dark"] [class*="divider"] {
-  background-color: var(--eo-border) !important;
-  border-color: var(--eo-border) !important;
-}
-
-/* ── Accent colour fix for light sections (replace residual violet) ── */
-[data-theme="light"] {
-  --colors--accent-primary:   #008767;
-  --colors--accent-secondary: #33af8f;
-  --colors--overlay:          rgba(0, 135, 103, 0.10);
-  --_color---primary--violet-50:  #e6f5f1;
-  --_color---primary--violet-100: #ccebe3;
-  --_color---primary--violet-200: #99d7c7;
-  --_color---primary--violet-300: #66c3ab;
-  --_color---primary--violet-400: #33af8f;
-  --_color---primary--violet-500: #008767;
-  --_color---primary--violet-600: #045B4B;
-  --_color---primary--violet-700: #064E3B;
-  --_color---primary--violet-800: #03352A;
-  --_color---primary--violet-900: #021C17;
-}
-
-/* ── CTA Buttons scoped to dark sections ── */
-[data-theme="dark"] .button[data-wf--button--variant="base"],
-.section_home_header .button[data-wf--button--variant="base"] {
-  background-color: var(--eo-cta) !important;
-  color: #FFFFFF !important;
-  border-color: var(--eo-cta) !important;
-}
-[data-theme="dark"] .button[data-wf--button--variant="base"]:hover,
-.section_home_header .button[data-wf--button--variant="base"]:hover {
-  background-color: var(--eo-cta-hover) !important;
-  border-color: var(--eo-cta-hover) !important;
-}
-</style>
-
-<style>
 
 /* Prevent orphan words */
 * {
@@ -172,7 +56,7 @@ body {
 /* Focus state style for keyboard navigation for the focusable elements */
 *[tabindex]:focus-visible,
   input[type="file"]:focus-visible {
-   outline: 0.125rem solid #008767;
+   outline: 0.125rem solid #4d65ff;
    outline-offset: 0.125rem;
 }
 
@@ -447,17 +331,17 @@ window.addEventListener('scroll', function () {
 .rays {
     --stripes: repeating-linear-gradient(
         135deg,
-        rgba(0, 135, 103, 0) 0%,
-        rgba(0, 135, 103, 0.1) 5%,
-        rgba(0, 135, 103, 0) 10%,
-        rgba(0, 135, 103, 0.2) 15%,
-        rgba(0, 135, 103, 0.1) 20%,
-        rgba(0, 135, 103, 0.2) 25%,
-        rgba(0, 135, 103, 0) 30%,
-        rgba(0, 135, 103, 0.5) 35%,
-        rgba(0, 135, 103, 0) 40%,
-        rgba(0, 135, 103, 0.1) 45%,
-        rgba(0, 135, 103, 0) 50%
+        rgba(178, 139, 255, 0) 0%,
+        rgba(178, 139, 255, 0.1) 5%,
+        rgba(178, 139, 255, 0) 10%,
+        rgba(178, 139, 255, 0.2) 15%,
+        rgba(178, 139, 255, 0.1) 20%,
+        rgba(178, 139, 255, 0.2) 25%,
+        rgba(178, 139, 255, 0) 30%,
+        rgba(178, 139, 255, 0.5) 35%,
+        rgba(178, 139, 255, 0) 40%,
+        rgba(178, 139, 255, 0.1) 45%,
+        rgba(178, 139, 255, 0) 50%
     );
     background-image: var(--stripes);
     background-size: 300%, 200%;
