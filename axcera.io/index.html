@@ -56,6 +56,11 @@
   /* Background layers */
   --_color---miscellaneous--midnight\<deleted\|variable-6f9a0a9f-3efe-e3f5-3eef-13ca3c55b685\>: #070A0B;
 
+  /* Override Webflow semantic accent/overlay tokens directly */
+  --colors--accent-primary:   #008767;
+  --colors--accent-secondary: #33af8f;
+  --colors--overlay:          rgba(0, 135, 103, 0.10);
+
   /* Expose semantic tokens for overrides below */
   --eo-bg-primary:    #070A0B;
   --eo-bg-secondary:  #091113;
@@ -116,6 +121,23 @@ body,
 [data-theme="dark"] [class*="divider"] {
   background-color: var(--eo-border) !important;
   border-color: var(--eo-border) !important;
+}
+
+/* ── Accent colour fix for light sections (replace residual violet) ── */
+[data-theme="light"] {
+  --colors--accent-primary:   #008767;
+  --colors--accent-secondary: #33af8f;
+  --colors--overlay:          rgba(0, 135, 103, 0.10);
+  --_color---primary--violet-50:  #e6f5f1;
+  --_color---primary--violet-100: #ccebe3;
+  --_color---primary--violet-200: #99d7c7;
+  --_color---primary--violet-300: #66c3ab;
+  --_color---primary--violet-400: #33af8f;
+  --_color---primary--violet-500: #008767;
+  --_color---primary--violet-600: #045B4B;
+  --_color---primary--violet-700: #064E3B;
+  --_color---primary--violet-800: #03352A;
+  --_color---primary--violet-900: #021C17;
 }
 
 /* ── CTA Buttons scoped to dark sections ── */
