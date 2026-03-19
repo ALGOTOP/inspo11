@@ -39,6 +39,28 @@
 <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 
 <style>
+/* ── Bolt.new blue palette override ── */
+:root, [data-theme], [data-wf-page] {
+  --_color---primary--violet-50:  #eff6ff;
+  --_color---primary--violet-100: #dbeafe;
+  --_color---primary--violet-200: #bfdbfe;
+  --_color---primary--violet-300: #7cb9ff;
+  --_color---primary--violet-400: #4d9eff;
+  --_color---primary--violet-500: #1a6bff;
+  --_color---primary--violet-600: #1050e0;
+  --_color---primary--violet-700: #0a3ab8;
+  --_color---primary--violet-800: #06278a;
+  --_color---primary--violet-900: #031545;
+  --_color---miscellaneous--midnight\<deleted\|variable-6f9a0a9f-3efe-e3f5-3eef-13ca3c55b685\>: #090d1a;
+}
+
+/* Override hardcoded glow gradient colors */
+.section_hero, [class*="hero"] {
+  background-image: radial-gradient(circle at 100% 100%, #1a6bff40, #0000 40%), radial-gradient(circle at 0 100%, #0a8fff4d, #0000 60%) !important;
+}
+</style>
+
+<style>
 
 /* Prevent orphan words */
 * {
@@ -56,7 +78,7 @@ body {
 /* Focus state style for keyboard navigation for the focusable elements */
 *[tabindex]:focus-visible,
   input[type="file"]:focus-visible {
-   outline: 0.125rem solid #4d65ff;
+   outline: 0.125rem solid #1a6bff;
    outline-offset: 0.125rem;
 }
 
@@ -331,17 +353,17 @@ window.addEventListener('scroll', function () {
 .rays {
     --stripes: repeating-linear-gradient(
         135deg,
-        rgba(178, 139, 255, 0) 0%,
-        rgba(178, 139, 255, 0.1) 5%,
-        rgba(178, 139, 255, 0) 10%,
-        rgba(178, 139, 255, 0.2) 15%,
-        rgba(178, 139, 255, 0.1) 20%,
-        rgba(178, 139, 255, 0.2) 25%,
-        rgba(178, 139, 255, 0) 30%,
-        rgba(178, 139, 255, 0.5) 35%,
-        rgba(178, 139, 255, 0) 40%,
-        rgba(178, 139, 255, 0.1) 45%,
-        rgba(178, 139, 255, 0) 50%
+        rgba(77, 158, 255, 0) 0%,
+        rgba(77, 158, 255, 0.1) 5%,
+        rgba(77, 158, 255, 0) 10%,
+        rgba(77, 158, 255, 0.2) 15%,
+        rgba(77, 158, 255, 0.1) 20%,
+        rgba(77, 158, 255, 0.2) 25%,
+        rgba(77, 158, 255, 0) 30%,
+        rgba(77, 158, 255, 0.5) 35%,
+        rgba(77, 158, 255, 0) 40%,
+        rgba(77, 158, 255, 0.1) 45%,
+        rgba(77, 158, 255, 0) 50%
     );
     background-image: var(--stripes);
     background-size: 300%, 200%;
