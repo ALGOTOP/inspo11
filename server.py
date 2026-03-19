@@ -2,6 +2,14 @@ import http.server
 import os
 
 class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == "/" or self.path == "/index.html":
+            self.send_response(302)
+            self.send_header("Location", "/axcera.io/index.html")
+            self.end_headers()
+            return
+        super().do_GET()
+
     def end_headers(self):
         self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         self.send_header("Pragma", "no-cache")
