@@ -4,9 +4,17 @@ import os
 class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/" or self.path == "/index.html":
-            self.send_response(302)
-            self.send_header("Location", "/axcera.io/index.html")
-            self.end_headers()
+            file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "axcera.io", "index.html")
+            try:
+                with open(file_path, "rb") as f:
+                    content = f.read()
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Content-Length", str(len(content)))
+                self.end_headers()
+                self.wfile.write(content)
+            except FileNotFoundError:
+                self.send_error(404, "File not found")
             return
         super().do_GET()
 
